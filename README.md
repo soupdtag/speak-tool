@@ -44,7 +44,7 @@ aws_secret_access_key = SECRET_ACCESS_KEY_HERE
 4. Install all of the packages outlined in `requirements.txt` in your virtual environment.
 5. Obtain an SSL certificate for your machine. (Amazon does not allow ExternalQuestion HITs to direct workers to non-HTTPS enabled websites.)
    - MIT CSAIL affiliates can [request an SSL cert from TIG](https://tig.csail.mit.edu/web-services/server-certificates/).
-6. Generate a text file containing file paths to each prompt file (image, audio, text, etc.) to be displayed in HITs, separated by a linebreak. For example:
+6. Generate a text file containing file paths to each prompt file (image, audio, text, etc.) to be displayed in HITs, separated by a linebreak. For example (example file located in `./static/test-files/`):
      ```
      dave_task/d/dining_room/gsun_2cfa50e4b8eab1d67a53bb20aaa28021.jpg
      dave_task/a/abbey/gsun_20086d50e070ae7560403aa409461895.jpg
@@ -56,7 +56,8 @@ aws_secret_access_key = SECRET_ACCESS_KEY_HERE
    - *It is strongly suggested that you use a symbolic link to your dataset folder inside the repo home directory, in order to make file paths as short as possible. This is important during data collection, for eliminating unnecessary nested folders. (Files are saved in a folder structure adapted from these file paths.)*
 7. Edit the template files in `templates/` with the text you'd like to display to workers. Sample templates are available for image, audio, and text tasks in `templates/test_battery`.
 8. Edit the configuration files (`app_config.txt` and `mturk/turk_config.txt`) according to your project (account info, file locations, etc.)
-9. Edit the `run_sandbox.sh` and `run_production.sh` files, following the instructions commented inside. (You need to configure the scripts in order to activate your virtual environment properly.)
+9. (optional) For extracting geolocation data from IP addresses during user/participant logging, download [GeoLite2](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en). Place the `GeoLite2-City.mmdb` file in `./scripts/geolite2` before use.
+10. Edit the `run_sandbox.sh` and `run_production.sh` files, following the instructions commented inside. (You need to configure the scripts in order to activate your virtual environment properly.)
 
 
 ## Instructions for use
