@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/static/styles.css" rel="stylesheet" type="text/css">
+		<title>MIT Spoken Language Systems Group study</title>
+	</head>
+
+	<body>
+		<div class="parent">
+			<div class="child"><p>Error: invalid filename.</p></div>
+			<div class="child"><p>Please contact the requester for assistance.</p></div>
+			{% block task %}{% endblock %}
+			<div class="child"><p><br><br><br></p></div>
+			<div class="child" style="font-size:10pt;text-align:center"><b>Progress:</b><canvas id="progbar" width="400" height="10"></canvas></div>
+		</div>		
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/static/styles.css" rel="stylesheet" type="text/css">
+		<title>MIT Spoken Language Systems Group study</title>
+	</head>
+
+	<body>
+		<div class="parent">
+			<div class="child">
+				<p style="color:crimson; background-color:lemonchiffron;">
+					<b>Error: </b> Your browser must have cookies enabled in order to complete this HIT.  We detected that your browser is blocking cookies.  To continue, please enable cookies and click the "Retry" button below.
+				</p>
+				<p>
+					Common problems/solutions:
+					<ul>
+						<li>If you are using a Chrome Incognito window, try either using a regular window or clicking on the lock button next to the URL, clicking "Cookies", clicking "Blocked", then enabling cookies on the ".csail.mit.edu" domain.
+						<li>If you are using Safari, Firefox, or Opera, make sure you have enabled cookies in your browser options.
+					</ul>
+					If the problem persists, please reach out to us and we would be happy to help.
+				</p>
+				<input id="retryButton" class="button goButton" type="submit" value="Retry">
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var retryBtn = document.getElementById("retryButton");
+		retryBtn.addEventListener("click", retryStart);
+
+		function retryStart() {
+			window.location.replace("{{ retrySubmitUrl }}?assignmentId={{ assignmentId }}&hitId={{ hitId }}&workerId={{ workerId }}&turkSubmitTo={{ turkSubmitTo }}");
+		}
+	</script>
+</html>

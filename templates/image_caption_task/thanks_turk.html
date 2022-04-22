@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/static/styles.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div class="child"><p>Thanks! To proceed, please press the 'Submit' button below.</p></div>
+		<form action = "{{ turkSubmitTo }}" method="POST">
+		    {% for key, value in payload.items() %}
+		    <input type="hidden" name="{{ key }}" value="{{ value }}">
+		    {% endfor %}
+		    <input class="button goButton" type="submit" value="Submit">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+server {
+
+       server_name arcas.csail.mit.edu;
+
+       location / {
+	include uwsgi_params;
+	uwsgi_pass unix:/data/sls/u/dharwath/code/speak_tool_instances/lsmdc_read_captions/lsmdc_task.sock;
+     }
+
+     location /mos/ {
+                 rewrite ^/mos(.*) $1 break;
+                 proxy_pass http://arcas.csail.mit.edu:7664;
+        }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/arcas.csail.mit.edu/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/arcas.csail.mit.edu/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+server {
+    if ($host = arcas.csail.mit.edu) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+       listen 80 default_server;
+       listen [::]:80 default_server;
+
+       server_name arcas.csail.mit.edu;
+    return 404; # managed by Certbot
+
+
+}

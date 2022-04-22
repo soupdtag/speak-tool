@@ -1,0 +1,23 @@
+{% extends "base/recorder_base.html" %}
+
+
+
+{% block task %}
+	{% if error == "1" %}
+		{% include "image_caption_task/error_msg.html" %}
+	{% endif %}
+	<div class="child"><p id="task"><b>Task: </b>Throughout the task, on the left of the screen you will be presented with 4 different images, one at a time. Please record yourself describing each image as if you were explaining it to a blind person. We're looking for a couple of sentences per image. You can talk about specific objects, locations, shapes, colors, etc. in the image. For help, refer to the example on the right.</p></div>
+	<div class="flex-container">
+		<div style="padding:0; margin:0"><img class="content" src="/static/test-files/{{ photo }}" alt="Image not available"><br>Image <b>{{ questionIdx1Based }}</b> of <b>{{ numQuestions }}</b></div>
+		<div class="child">
+			<div id="example" style="background-color: #f1f1f1; margin: 0 20%; padding: 10px; border-radius:25px">Here's an example of the level of detail we're looking for:
+				<div class="sample-flex-container">
+					<div><p><img src="/static/test-files/image_caption_task/r/restaurant/gsun_aef85d16664185182595a507571bd862.jpg" alt="example photo" align="middle"></p></div>
+					<div><i>"A red brick sidewalk, with a brick building on the far side of the street. There's a patio with umbrellas at the side of the building. In the foreground, there's a hanging plant with pink flowers."</i></div>
+				</div>
+			</div>
+			<br>
+			<div>{% include "base/recorder_module.html" %}</div>
+		</div>
+	</div>
+{% endblock %}

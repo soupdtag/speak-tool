@@ -1,0 +1,11 @@
+# aws config
+region = 'us-east-1'										# region names: us-east-2, us-west-1, eu-central-1, etc...
+profile = 'sls-amazon-2'									# user AWS credentials (reads access keys from ~/.aws/credentials) 
+env = 'production'											# environment (sandbox OR production)
+
+# task-specific config
+#flask_url = 'https://arcas.csail.mit.edu:5000'							# url of flask app
+flask_url = 'https://arcas.csail.mit.edu'
+battery = 'cub_task'										# battery name
+hits_save_location = '/data/sls/placesaudio/datasets/speak_amt_cub_captions'			# where to save assignment data
+#num_hits = 11788											# number of HITs to deploy
