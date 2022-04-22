@@ -1,5 +1,6 @@
 # Speak: a toolkit to collect speech recordings from Amazon Mechanical Turk workers
-(README last updated by dharwath 27 Aug 2020)
+Christopher Song, David Harwath, Tuka Alhanai, James Glass
+(README last updated by Christopher Song 22 Aug 2022)
 
  - Overview
  - Setup/Instructions
