@@ -48,7 +48,9 @@ Make sure that the lines of this text file are shuffled randomly (e.g. by using 
 
 7. Edit the template files in `templates/` if you would like to change the format of the task or the instructions displayed to the workers.
 
-8. Edit the configuration files (`app_config.txt` and `mturk/turk_config.txt`) according to your project (account info, file locations, etc.). In app_config.txt, be sure to point the "input_files" variable to the text file you created in step 6.
+8. For automated extraction of geolocation data from participant IP addresses, download the [GeoLite2 database](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data?lang=en), and place the GeoLite2-City.mmdb file in `./scripts/geolite2`. (Due to filesize restrictions, the folder currently only contains the README, license, and copyright information.
+
+9. Edit the configuration files (`app_config.txt` and `mturk/turk_config.txt`) according to your project (account info, file locations, etc.). In app_config.txt, be sure to point the "input_files" variable to the text file you created in step 6.
 
 ## WSGI setup
 You should not have to edit the WSGI configuration. However, for posterity the guide that I followed to set up WSGI for this task can be found at
