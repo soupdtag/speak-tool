@@ -1,11 +1,17 @@
 # Speak: a toolkit to collect speech recordings from Amazon Mechanical Turk workers
 Christopher Song, David Harwath, Tuka Alhanai, James Glass
-(README last updated by Christopher Song 22 Aug 2022)
+(README last updated by Christopher Song 21 July 2022)
 
  - Overview
  - Setup/Instructions
  - Methods
  - Acknowledgements
+
+**For more information on the design of Speak, please refer to [this paper in LREC 2022](http://www.lrec-conf.org/proceedings/lrec2022/pdf/2022.lrec-1.787.pdf).**
+
+**If you end up using Speak, I'd love to hear about it! Find me on LinkedIn and shoot me a message. Any [citations](http://www.lrec-conf.org/proceedings/lrec2022/bib/2022.lrec-1.787.bib) in your academic work are also appreciated.**
+
+
 
 ## Overview
 This toolkit allows requesters to collect speech recordings from workers on Amazon Mechanical Turk (AMT), by posting tasks to AMT using the boto3 ExternalQuestion data structure. Each webpage prompts a worker with a stimulus (image, text, sound, etc.) and uses an embedded audio recorder to collect the worker's speech recordings. Importantly, the collected data is validated before storage.
